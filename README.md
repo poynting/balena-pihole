@@ -57,52 +57,6 @@ On your router or DHCP server assign a static IP to your Pi-hole device, and set
 
 Documentation for Pi-hole can be found at <https://docs.pi-hole.net/>
 
-### PADD
-
-Note that this project uses the [fbcp block](https://github.com/balenablocks/fbcp).
-
-The PiTFT LCD screens [from Adafruit (and others)](https://www.adafruit.com/?q=pitft) are supported.
-
-In order to use these displays you're required to add additional configuration by setting
-the `FBCP_DISPLAY` variable within the dashboard. This variable should be set to one of the values below:
-
-- `adafruit-hx8357d-pitft`
-- `adafruit-ili9341-pitft`
-- `freeplaytech-waveshare32b`
-- `waveshare35b-ili9486`
-- `tontec-mz61581`
-- `waveshare-st7789vw-hat`
-- `waveshare-st7735s-hat`
-- `kedei-v63-mpi3501`
-- `dtoverlay` (requires `BALENA_HOST_CONFIG_dtoverlay` to be set)
-
-#### Configuring HDMI and TFT display sizes
-
-The following [Device Configuration](https://www.balena.io/docs/learn/manage/configuration/#configuration-variables)
-variables might be required for proper scaling and resolutions:
-
-| Name                                  | Value              |
-| ------------------------------------- | ------------------ |
-| BALENA_HOST_CONFIG_hdmi_cvt           | 480 320 60 1 0 0 0 |
-| BALENA_HOST_CONFIG_hdmi_force_hotplug | 1                  |
-| BALENA_HOST_CONFIG_hdmi_group         | 2                  |
-| BALENA_HOST_CONFIG_hdmi_mode          | 87                 |
-| BALENA_HOST_CONFIG_rotate_screen      | 1                  |
-
-#### FONTFACE and FONTSIZE
-
-Use the environment variables `FONTFACE` and `FONTSIZE` to control the PADD text size on your display.
-
-Valid font faces are:
-
-- VGA (sizes 8x8, 8x14, 8x16, 16x28 and 16x32)
-- Terminus (sizes 6x12, 8x14, 8x16, 10x20, 12x24, 14x28 and 16x32)
-- TerminusBold (sizes 8x14, 8x16, 10x20, 12x24, 14x28 and 16x32)
-- TerminusBoldVGA (sizes 8x14 and 8x16)
-- Fixed (sizes 8x13, 8x14, 8x15, 8x16 and 8x18)
-
-From: <https://manpages.debian.org/bullseye/console-setup/console-setup.5.en.html>
-
 ### Unbound
 
 This project includes an Unbound service providing recursive DNS, but it is not used by default.
