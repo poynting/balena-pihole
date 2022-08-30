@@ -36,4 +36,4 @@ services:
     labels:
       io.balena.features.supervisor-api: 1
     environment:
-      SET_HOSTNAME: pi-hole
+      SET_HOSTNAME: pihole
